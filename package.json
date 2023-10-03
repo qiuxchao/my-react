@@ -4,9 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint --ext .js,.ts,.jsx.tsx --fix --quiet ./packages"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/eslint-parser": "^7.22.15",
+    "@commitlint/cli": "^17.7.2",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@qiuxc/eslint-config": "^0.0.9",
+    "@qiuxc/prettier-config": "^0.1.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.4",
+    "@typescript-eslint/parser": "^6.7.4",
+    "commitlint": "^17.7.2",
+    "eslint": "^8.50.0",
+    "eslint-plugin-react": "^7.33.2",
+    "husky": "^8.0.3",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
+  "prettier": "@qiuxc/prettier-config"
 }
