@@ -50,6 +50,13 @@ const renderRoot = (root: FiberRootNode) => {
       workInProgress = null;
     }
   } while (true);
+
+  // 更新树已经挂载到 root.current.alternate 上
+  const finishedWork = root.current.alternate;
+  root.finishedWork = finishedWork;
+
+  // 提交更新
+  // commitRoot(root);
 };
 
 const workLoop = () => {

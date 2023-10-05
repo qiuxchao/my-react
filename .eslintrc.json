@@ -7,5 +7,8 @@
   "extends": ["@qiuxc", "@qiuxc/eslint-config/typescript"],
   "rules": {
     "max-params": "off"
+  },
+  "globals": {
+    "__DEV__": true
   }
 }

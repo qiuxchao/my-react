@@ -21,9 +21,11 @@ export class FiberNode {
   memoizedState: any;
   /** 标识指向 current 还是 workInProgress */
   alternate: FiberNode | null;
-  // 副作用
+  /** 副作用 */
   flags: Flags;
-  // 更新队列
+  /**  子树副作用 */
+  subtreeFlags: Flags;
+  /**  更新队列 */
   updateQueue: unknown;
 
   public constructor(tag: WorkTag, pendingProps: Props, key: Key) {
@@ -55,6 +57,7 @@ export class FiberNode {
 
     this.alternate = null;
     this.flags = NoFlags;
+    this.subtreeFlags = NoFlags;
   }
 }
 
@@ -89,6 +92,7 @@ export const createWorkInProgress = (current: FiberNode, pendingProps: Props) =>
     wip.pendingProps = pendingProps;
     // 清除副作用
     wip.flags = NoFlags;
+    wip.subtreeFlags = NoFlags;
   }
 
   wip.type = current.type;
